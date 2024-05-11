@@ -139,4 +139,7 @@ th,td{
    .d-portrait-none{
     display: none !important;
    }
+   .text-center-portrait{
+    text-align: center;
+   }
 }
