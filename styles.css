@@ -1,0 +1,142 @@
+body, input, button{
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  margin: 0;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+hr{
+    border: 1px solid #eee;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto; 
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.d-flex{
+    display: flex;
+    gap: 8px;
+}
+.align-items-center{
+    align-items: center;
+}
+.w-100{
+    width: 100%;
+}
+.text-center{
+    text-align: center;
+}
+.me-8{
+    margin-right: 8px;
+}
+.border{
+    border: 2px solid #eee;
+}
+.rounded{
+    border-radius: 8px;
+}
+.p-16{
+    padding: 16px;
+}
+.mt-16{
+    margin-top: 16px;
+}
+.mb-32{
+    margin-bottom: 32px;
+}
+.pt-32{
+    padding-top: 32px;
+}
+.btn{
+    border-radius: 8px;
+    height: 44px;
+    border: 0;
+    padding: 2px;
+    background-color: #000;
+    color: #fff;
+}
+h1{
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+h2{
+    margin-top: 0;
+    font-weight: 400;
+    color:#666;
+    font: 28px;
+}
+h3{
+    margin: 0;
+}
+table{
+    border-spacing: 0; /* Elimina el espacio entre las columnas */
+}
+th{
+    text-align: left;
+    color: #aaa;
+    font-size: 18px;
+}
+td{
+    border-top: 1px solid #ddd;   
+}
+th,td{
+    padding: 16px 0;
+}
+#urlForm{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+#longUrl{
+    height: 42px;
+    border: 0;
+    padding-left: 16px;
+    max-width: 100%; 
+    border-radius: 8px;
+    box-sizing: border-box; 
+    border: 2px solid #000;
+    flex-grow: 1;
+}
+#shortUrlResult{
+    display: flex;
+    border: 2px solid #128c7e !important;
+    gap: 20px;
+    align-items: center;
+    padding: 8px;
+    justify-content: space-between;
+    color: #128c7e;
+    font-weight: 600;
+    cursor:pointer;
+    height: 28px;
+}
+.oculto{
+    opacity: 0;
+    pointer-events: none;
+}
+.original-url {
+    max-width: 200px; /* Establece el ancho máximo permitido para el texto */
+    overflow: hidden; /* Oculta el texto que se desborda del contenedor */
+    white-space: nowrap; /* Evita que el texto se envuelva a una nueva línea */
+    text-overflow: ellipsis; /* Agrega los puntos suspensivos al final del texto truncado */
+}
+.btn-copiar{
+    margin-right: 16px;
+}
+.btn-acortar{
+    min-width: 100px;
+}
+@media (orientation: portrait) {
+   .d-portrait-none{
+    display: none !important;
+   }
+}

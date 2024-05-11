@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corti.top</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link rel="icon" href="https://www.mosquedacordova.com/assets/img/favicon/logo-100x100.png" sizes="32x32">
+    <link rel="icon" href="https://www.mosquedacordova.com/assets/img/favicon/logo-300x300.png" sizes="192x192">
+</head>
+<body>
+    <header class="text-center">
+        <h1>Corti.top</h1>
+        <h2>Acortador de url práctico, eficiente y gratis 😎</h2>
+        <hr>
+    </header>
+    <!-- Start Acortador URL -->
+    <section class="container text-center mb-32">
+        <form id="urlForm" class=" rounded pt-32">
+            <label>Ingresa la URL que deseas acortar <span class="d-portrait-none"> 🚨 Incluye "http://" o "https://":</span></label>
+            <div class="d-flex align-items-center">
+                <input type="url" id="longUrl" name="longUrl" class="w-100" placeholder="Recuerda incluir http:// o https://" required>
+                <button type="submit" class="btn btn-acortar">
+                    Acortar
+                </button>
+            </div>
+        </form>
+        <div id="shortUrlResult" class="rounded mt-16 oculto">
+            <div class="w-100">https://corti.top/5f6td4</div>
+            <i class="ti ti-copy btn-copiar"></i>
+        </div>
+    </section>
+    <!-- End Acortador URL -->
+
+    <!-- Start URLs Anteriores -->
+    <section class="container">
+        <div class="border rounded p-16">
+            <h3>URLs anteriores</h3>
+            <table class="w-100">
+                <thead>
+                    <th>ID</th>
+                    <th>Codigo</th>
+                    <th>URL Original</th>
+                    <th class="text-center">Acciones</th>
+                </thead>
+                <tr>
+                    <td>#1</td>
+                    <td><a href="https://corti.top/5f6td4" target="_blank">5f6td4</a></td>
+                    <td><div class="original-url">mosquedacordova.com</div></td>
+                    <td class="text-center">
+                        <a href="#" target="_blank"><i class="ti ti-link me-8"></i></a>
+                        <i class="ti ti-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#1</td>
+                    <td><a href="https://corti.top/5f6td4" target="_blank">5f6td4</a></td>
+                    <td><div class="original-url">mosquedacordova.com</div></td>
+                    <td class="text-center">
+                        <a href="#" target="_blank"><i class="ti ti-link me-8"></i></a>
+                        <i class="ti ti-trash"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#1</td>
+                    <td><a href="https://corti.top/5f6td4" target="_blank">5f6td4</a></td>
+                    <td><div class="original-url">mosquedacordova.com</div></td>
+                    <td class="text-center">
+                        <a href="#" target="_blank"><i class="ti ti-link me-8"></i></a>
+                        <i class="ti ti-trash"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!-- End URLs Anteriores -->
+
+</body>
+</html>
