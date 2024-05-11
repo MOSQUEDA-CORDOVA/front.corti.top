@@ -140,6 +140,7 @@ th,td{
     overflow: hidden; /* Oculta el texto que se desborda del contenedor */
     white-space: nowrap; /* Evita que el texto se envuelva a una nueva línea */
     text-overflow: ellipsis; /* Agrega los puntos suspensivos al final del texto truncado */
+    font-size: 12px;
 }
 .btn-copiar{
     margin-right: 16px;
@@ -168,14 +169,29 @@ th,td{
     right: 0;
     transition: bottom 1s ease-out;
     pointer-events: none;
+    color: #128c7e;
 }
 .notificacion-flotante.active{
     bottom:16px;
 }
-.notificacion-flotante div{
+.notificacion-flotante-error{
+    position:fixed;
+    box-sizing: border-box; 
+    max-width: 400px;
+    bottom: -100px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    transition: bottom 1s ease-out;
+    pointer-events: none;
+    color: #f00 !important;
+}
+.notificacion-flotante-error.active{
+    bottom:16px;
+}
+.notificacion-flotante div, .notificacion-flotante-error div{
     padding: 4px 16px;
     background-color: #fff;
-    color: #128c7e;
     justify-content:space-between;
     align-items: center;
     flex-grow: 1;
@@ -202,4 +218,10 @@ th,td{
 }
 .vibrar {
     animation: vibrar 0.3s ease;
+}
+.short-code-items{
+    font-size: 14px;
+}
+.btn-delete{
+    cursor: pointer;
 }

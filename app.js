@@ -88,3 +88,91 @@ function copiarAlPortapapeles(elemento) {
         notificacionFlotante.classList.remove("active");
     }, 2000);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    cargarUrlsAnteriores();
+    // Agregar un listener de clic al contenedor principal y delegar los eventos
+    document.querySelector('#urls-table').addEventListener('click', function(event) {
+        // Verificar si el clic ocurrió en un enlace con la clase btn-delete
+        if (event.target.classList.contains('btn-delete')) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            var row = event.target.closest('tr'); // Obtener la fila que contiene el botón
+            var id = row.querySelector('td:first-child').textContent; // Obtener el texto del primer td (ID)
+            // Realizar la solicitud para eliminar la URL
+            eliminarUrl(id, function(success) {
+                if (success) {
+                    row.remove(); // Eliminar la fila del front-end si la eliminación fue exitosa
+                } else {
+                    var notificacionFlotante = document.querySelector('.notificacion-flotante-error');
+                    notificacionFlotante.classList.add('active');
+                    setTimeout(function() {
+                        notificacionFlotante.classList.remove("active");
+                    }, 3000);
+                }
+            });
+        }
+    });
+});
+
+function cargarUrlsAnteriores() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://back.corti.top/api/urls', true);
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            var data = JSON.parse(request.responseText);
+            mostrarUrls(data);
+        } else {
+            console.error('Error al cargar las URLs anteriores');
+        }
+    };
+
+    request.onerror = function() {
+        console.error('Error de conexión');
+    };
+
+    request.send();
+}
+
+function mostrarUrls(urls) {
+    var table = document.getElementById('urls-table');
+    var tbody = document.createElement('tbody');
+
+    urls.forEach(function(url) {
+        var row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${url.id}</td>
+            <td><a href="https://corti.top/${url.short_code}" target="_blank" class="short-code-items">${url.short_code}</a></td>
+            <td><div class="original-url">${url.long_url}</div></td>
+            <td class="text-center">
+                <a href="https://corti.top/${url.short_code}" target="_blank"><i class="ti ti-link me-8"></i></a>
+                <i class="ti ti-trash btn-delete"></i>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+}
+
+function eliminarUrl(id, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('DELETE', 'https://back.corti.top/api/urls/' + id, true);
+
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+            callback(true); // Llamar al callback con true si la eliminación fue exitosa
+        } else {
+            console.error('Error al eliminar la URL:', xhr.status);
+            callback(false); // Llamar al callback con false si la eliminación falla
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('Error de conexión');
+        callback(false); // Llamar al callback con false si hay un error de conexión
+    };
+
+    xhr.send();
+}
