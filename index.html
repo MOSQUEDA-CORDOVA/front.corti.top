@@ -29,15 +29,15 @@
             </div>
         </form>
         <div class="w-100 simpleAlert text-alert"></div>
-        <div class="containerShortUrlResult rounded mt-16 oculto">
-            <div class="w-100" id="shortUrlResult">https://corti.top/5f6td4</div>
+        <div class="containerShortUrlResult rounded mt-16 oculto" onclick="copiarAlPortapapeles(this)">
+            <div class="w-100 itemShortUrl" id="shortUrlResult">https://corti.top</div>
             <i class="ti ti-copy btn-copiar"></i>
         </div>
     </section>
     <!-- End Acortador URL -->
 
     <!-- Start URLs Anteriores -->
-    <section class="container">
+    <section class="container mb-32">
         <div class="border rounded p-16">
             <h3>URLs anteriores</h3>
             <table class="w-100">
@@ -77,7 +77,18 @@
             </table>
         </div>
     </section>
+
+    <!-- Start Notificaciones -->
+    <div class="notificacion-flotante mb-32">
+        <div class="border rounded d-flex">
+            <i class="ti ti-check"></i>
+            <div>¡URL copiada al portapapeles!</div>
+        </div>
+    </div>
+    <!-- End Notificaciones -->
+
     <!-- End URLs Anteriores -->
     <script src="app.js"></script>
+    
 </body>
 </html>

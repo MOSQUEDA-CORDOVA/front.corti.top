@@ -64,3 +64,27 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
     var data = JSON.stringify({ long_url: longUrl });
     xhr.send(data);
 });
+
+function copiarAlPortapapeles(elemento) {
+    // Obtener el contenido del elemento itemShortUrl
+    var contenido = elemento.querySelector('.itemShortUrl').innerText;
+
+    // Crear un elemento de texto temporal para copiar al portapapeles
+    var tempInput = document.createElement("textarea");
+    tempInput.value = contenido;
+    document.body.appendChild(tempInput);
+
+    // Seleccionar y copiar el contenido al portapapeles
+    tempInput.select();
+    document.execCommand("copy");
+
+    // Remover el elemento temporal
+    document.body.removeChild(tempInput);
+
+    // Mostrar una notificación o realizar alguna acción adicional si lo deseas
+    var notificacionFlotante = document.querySelector('.notificacion-flotante');
+    notificacionFlotante.classList.add('active');
+    setTimeout(function() {
+        notificacionFlotante.classList.remove("active");
+    }, 2000);
+}

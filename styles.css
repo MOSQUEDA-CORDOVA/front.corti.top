@@ -158,6 +158,28 @@ th,td{
     opacity: 1;
     margin-top: 16px;
 }
+.notificacion-flotante{
+    position:fixed;
+    box-sizing: border-box; 
+    max-width: 400px;
+    bottom: -100px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    transition: bottom 1s ease-out;
+    pointer-events: none;
+}
+.notificacion-flotante.active{
+    bottom:16px;
+}
+.notificacion-flotante div{
+    padding: 4px 16px;
+    background-color: #fff;
+    color: #128c7e;
+    justify-content:space-between;
+    align-items: center;
+    flex-grow: 1;
+}
 @media (orientation: portrait) {
    .d-portrait-none{
     display: none !important;
@@ -165,6 +187,9 @@ th,td{
    .text-center-portrait{
     text-align: center;
    }
+   .notificacion-flotante{
+    padding: 0 8px;
+    }
 }
 
 @keyframes vibrar {
