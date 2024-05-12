@@ -1,13 +1,3 @@
-// Obtener la URL actual
-var currentUrl = window.location.href;
-
-// Verificar si la URL contiene un código corto
-if (currentUrl.includes('/')) {
-    var shortCode = currentUrl.split('/').pop();
-    console.log('Código corto detectado:', shortCode);
-    // Aquí puedes realizar la solicitud POST al backend con el código corto
-}
-
 document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
