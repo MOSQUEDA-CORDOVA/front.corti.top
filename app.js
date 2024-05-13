@@ -1,11 +1,25 @@
 function sanitizeUserInput(input) {
-    // Remover cualquier caracter no deseado, como espacios en blanco al inicio o al final
-    var sanitizedInput = input.trim();
-    
-    // También puedes realizar otras operaciones de saneamiento, como eliminar caracteres especiales o validar el formato de la URL
-    
-    return sanitizedInput;
+    // Eliminar espacios en blanco al principio y al final
+    input = input.trim();
+
+    // Reemplazar caracteres especiales HTML para evitar posibles problemas de seguridad
+    input = input.replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#39;");
+
+    // Validar el formato de la URL
+    var urlPattern = /^(https?:\/\/)?([\w\-]+(\.[\w\-]+)+([/?#]\S*)?)?$/;
+    if (!urlPattern.test(input)) {
+        // Si la URL no cumple con el formato esperado, podrías mostrar un mensaje de error o realizar alguna acción adecuada.
+        // Aquí simplemente lanzamos un error.
+        throw new Error("La URL no es válida");
+    }
+
+    return input;
 }
+
 
 document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
