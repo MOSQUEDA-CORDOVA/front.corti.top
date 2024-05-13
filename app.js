@@ -67,7 +67,7 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
 
 function copiarAlPortapapeles(elemento) {
     // Obtener el contenido del elemento itemShortUrl
-    var contenido = elemento.querySelector('.itemShortUrl').innerText;
+    var contenido = elemento.querySelector('.itemShortUrl').textContent;
 
     // Crear un elemento de texto temporal para copiar al portapapeles
     var tempInput = document.createElement("textarea");
@@ -141,7 +141,7 @@ function mostrarUrls(urls) {
 
     urls.forEach(function(url) {
         var row = document.createElement('tr');
-        row.innerHTML = `
+        row.textContent = `
             <td>${url.id}</td>
             <td><a href="https://corti.top/${url.short_code}" target="_blank" class="short-code-items">${url.short_code}</a></td>
             <td><div class="original-url">${url.long_url}</div></td>
