@@ -1,3 +1,12 @@
+function sanitizeUserInput(input) {
+    // Remover cualquier caracter no deseado, como espacios en blanco al inicio o al final
+    var sanitizedInput = input.trim();
+    
+    // También puedes realizar otras operaciones de saneamiento, como eliminar caracteres especiales o validar el formato de la URL
+    
+    return sanitizedInput;
+}
+
 document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
