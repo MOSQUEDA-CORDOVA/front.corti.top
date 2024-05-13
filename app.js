@@ -141,7 +141,7 @@ function mostrarUrls(urls) {
 
     urls.forEach(function(url) {
         var row = document.createElement('tr');
-        row.textContent = `
+        row.innerHTML = `
             <td>${url.id}</td>
             <td><a href="https://corti.top/${url.short_code}" target="_blank" class="short-code-items">${url.short_code}</a></td>
             <td><div class="original-url">${url.long_url}</div></td>
