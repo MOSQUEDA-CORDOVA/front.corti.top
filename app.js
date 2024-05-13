@@ -1,7 +1,7 @@
 document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var longUrl = document.getElementById('longUrl').value;
+    var longUrl = sanitizeUserInput(document.getElementById('longUrl').value);
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://back.corti.top/api/shorten', true);
